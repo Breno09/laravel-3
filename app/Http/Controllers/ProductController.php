@@ -92,7 +92,17 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+
+        $input = $request->only(
+            'name',
+            'description',
+            'price'
+        );
+
+        $product->update($input);
+
+        return redirect('/products');
     }
 
     /**
@@ -103,6 +113,10 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+
+        $product->delete();
+
+        return redirect('/products');
     }
 }

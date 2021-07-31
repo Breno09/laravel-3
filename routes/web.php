@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,31 +15,59 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get(
+    '/',
+     [UserController::class, 'signin']
+)->name('Login');
 
-route::get(
+Route::get(
+    '/signup',
+    [UserController::class, 'signup']
+);
+
+Route::post(
+    '/login',
+    [UserController::class, 'login']
+);
+
+Route::post(
+    '/users/store',
+    [UserController::class, 'store']
+);
+
+Route::get(
     '/products',
      [ProductController::class, 'index']
-    );
+    )->middleware('auth');
 
-    route::get(
+    Route::get(
         '/products/create',
         [ProductController::class, 'create']
-    );
+    )->middleware('auth');
 
-    route::post(
+    Route::post(
         '/products/store',
         [ProductController::class, 'store']
-    );
+    )->middleware('auth');
 
-    route::get(
+    Route::get(
         '/products/{id}',
         [ProductController::class, 'show']
-    );
+    )->middleware('auth');
 
-    route::get(
+    Route::get(
         '/products/edit/{id}',
         [ProductController::class, 'edit']
-    );
+    )->middleware('auth');
+
+    Route::post(
+        '/products/update/{id}',
+        [ProductController::class, 'update']
+    )->middleware('auth');
+
+    Route::get(
+        '/products/delete/{id}',
+        [ProductController::class, 'destroy']
+    )->middleware('auth');
+
+    

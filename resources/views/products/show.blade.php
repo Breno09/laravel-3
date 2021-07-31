@@ -20,7 +20,7 @@
             justify-content: center;
             flex-direction: column;
             align-items: center;
-            background-image: url(https://images.unsplash.com/photo-1593708038354-2823ee708e3d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=376&q=80);
+            background-image: url(https://images.unsplash.com/photo-1598550487031-0898b4852123?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);
         }
         form{
             height: 150px;

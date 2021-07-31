@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Editar Produto</h1>
-    <form action="/products/update{{ $product->id }}"
+    <form action="/products/update/{{ $product->id }}"
      method="post">
     @csrf
     <input name="name" value="{{ $product->name}}">
@@ -17,7 +17,7 @@
     <button type="submit">Enviar</button>
 </form>
 <a href="/products/delete/{{ $product->id }}">
-Deleta
+Deletar
 </a>
 </body>
 </html>

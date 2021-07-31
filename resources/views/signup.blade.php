@@ -11,7 +11,11 @@
     <form action="/users/store" method="post">
         @csrf
         <input type="text" name="name" placeholder="Name">
+        <br>
+        <br>
         <input type="email" name="email" placeholder="E-mail">
+        <br>
+        <br>
         <input type="password" name="password" placeholder="Senha">
         <button type="submit">Enviar</button>
     </form>
